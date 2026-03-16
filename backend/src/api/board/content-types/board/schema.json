@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "boards",
+  "info": {"singularName": "board", "pluralName": "boards", "displayName": "Board"},
+  "options": {"draftAndPublish": false},
+  "attributes": {
+    "title": {"type": "string", "required": true},
+    "owner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "columns": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::column.column",
+      "mappedBy": "board"
+    }
+  }
+}

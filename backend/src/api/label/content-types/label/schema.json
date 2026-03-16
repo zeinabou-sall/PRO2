@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "labels",
+  "info": {"singularName": "label", "pluralName": "labels", "displayName": "Label"},
+  "options": {"draftAndPublish": false},
+  "attributes": {
+    "name": {"type": "string", "required": true},
+    "color": {"type": "string", "required": true, "default": "#D946EF"},
+    "owner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "cards": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::card.card",
+      "mappedBy": "labels"
+    }
+  }
+}

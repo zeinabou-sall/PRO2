@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "columns",
+  "info": {"singularName": "column", "pluralName": "columns", "displayName": "Column"},
+  "options": {"draftAndPublish": false},
+  "attributes": {
+    "title": {"type": "string", "required": true},
+    "color": {"type": "string", "default": "#b5179e"},
+    "wipLimit": {"type": "integer", "default": 0},
+    "order": {"type": "integer", "required": true, "default": 0},
+    "board": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::board.board",
+      "inversedBy": "columns"
+    },
+    "cards": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::card.card",
+      "mappedBy": "column"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "suptaskflow-backend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Strapi API for SupTaskFlow",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build"
+  },
+  "dependencies": {
+    "@strapi/plugin-users-permissions": "^5.0.0",
+    "@strapi/strapi": "^5.0.0",
+    "better-sqlite3": "^9.5.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.3",
+    "styled-components": "^6.3.11"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.3"
+  }
+}

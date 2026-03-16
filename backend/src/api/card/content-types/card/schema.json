@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cards",
+  "info": {"singularName": "card", "pluralName": "cards", "displayName": "Card"},
+  "options": {"draftAndPublish": false},
+  "attributes": {
+    "title": {"type": "string", "required": true},
+    "description": {"type": "text"},
+    "dueDate": {"type": "date"},
+    "priority": {
+      "type": "enumeration",
+      "enum": ["low", "medium", "high"],
+      "default": "medium"
+    },
+    "coverColor": {
+      "type": "string",
+      "default": "#f72585"
+    },
+    "order": {"type": "integer", "required": true, "default": 0},
+    "column": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::column.column",
+      "inversedBy": "cards"
+    },
+    "labels": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::label.label",
+      "inversedBy": "cards"
+    }
+  }
+}
